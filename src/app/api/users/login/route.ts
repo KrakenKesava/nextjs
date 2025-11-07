@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
         }, {status: 200});
         response.cookies.set("token", token, {
             httpOnly: true, 
+            expires: new Date(Date.now() + 24 * 60 * 60 * 1000) // 1 day
         });   
            return response;    
         
