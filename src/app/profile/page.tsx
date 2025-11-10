@@ -25,7 +25,7 @@ export default function ProfilePage() {
         try {
             const response = await axios.get("api/users/me");
             console.log("User details:", response.data);
-            setData(response.data.data.username);
+            setData(response.data.data._id);
         }
         catch (error: any) {
             console.log("Error fetching user details:", error);
